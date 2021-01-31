@@ -90,8 +90,9 @@ apt-get -y install dkms build-essential make gcc libelf-dev
 tar vjxf $PWD/r8152.53.56-2.14.0.bz2
 cd r8152.53.56-2.14.0
 
-chmod a+x autorun.sh
-./autorun.sh
+make
+depmod -a
+update-initramfs
 
 if [ $? == 0 ]; then
 	echo ''
