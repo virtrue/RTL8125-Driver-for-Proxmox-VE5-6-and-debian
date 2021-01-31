@@ -1,14 +1,14 @@
 #!/bin/bash
-# This script is automaticlly complie RTL8125 2.5G ethernet card driver for PVE
+# This script is automaticlly complie RTL8152(8156) 2.5G ethernet card driver for PVE
 # date 2020/4/25 22:35 UTC +8:00
 # Support Linux kernel version 2.4 to 5.6
 
 
 
-# Check rtl8125 kernel module is exist it 【检查驱动是否加载】
-check=`lsmod | grep r8125`
+# Check rtl8152 kernel module is exist it 【检查驱动是否加载】
+check=`lsmod | grep r8152`
 if [ "${check}" != "" ]; then
-	echo 'RTL8125 driver has been Loaded!'
+	echo 'RTL8152 driver has been Loaded!'
 	echo '恭喜！当前网卡驱动已加载！'
 	exit 0
 fi
@@ -87,8 +87,8 @@ apt-get install ${kernel_headers_latest_version} ${kernel_image_latest_version}
 apt-get -y install dkms build-essential make gcc libelf-dev
 
 
-tar vjxf $PWD/r8125-9.003.05.tar.bz2
-cd r8125-9.003.05
+tar vjxf $PWD/r8152.53.56-2.14.0.bz2
+cd r8152.53.56-2.14.0
 
 chmod a+x autorun.sh
 ./autorun.sh
@@ -96,11 +96,11 @@ chmod a+x autorun.sh
 if [ $? == 0 ]; then
 	echo ''
 	echo ''
-	echo 'RTL8125 driver has been compiled! please try run:[ lsmod | grep r8125 ]'
-	echo '恭喜！8125网卡驱动已编译！请输入检测命令:[ lsmod | grep r8125 ]'
+	echo 'RTL8152 driver has been compiled! please try run:[ lsmod | grep r8152 ]'
+	echo '恭喜！8152网卡驱动已编译！请输入检测命令:[ lsmod | grep r8152 ]'
 	echo '-------------------------------------------------------------------------------------'
-	echo 'If show modprobe: ERROR: could not insert 'r8125': Invalid argument,Please reboot system, and try it again. '
-	echo '如果出现 modprobe: ERROR: could not insert 'r8125': Invalid argument,请重启系统.再来一次。'
+	echo 'If show modprobe: ERROR: could not insert 'r8152': Invalid argument,Please reboot system, and try it again. '
+	echo '如果出现 modprobe: ERROR: could not insert 'r8152': Invalid argument,请重启系统.再来一次。'
 	exit 0
 else 
 	echo ''
