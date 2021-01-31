@@ -1,5 +1,5 @@
 
-        来源于tubaxiaosiji的脚本修改为适用于USB版本rtl8152（8156）的驱动   
+        来源于tubaxiaosiji的脚本修改为适用于USB版本rtl8152（8156）的驱动,修改了驱动包及编译安装命令   
 
 
 
