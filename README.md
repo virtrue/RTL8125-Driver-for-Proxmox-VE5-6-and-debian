@@ -46,7 +46,7 @@ Support Linux kernel version 2.4 to 5.6   【支持的Linux内核版本，从2.4
 
 6.运行脚本    [Run script in shell]   
 
-	root@hostname# bash rtl8125_install.sh  
+	root@hostname# bash rtl8152_install.sh  
 
 7.等待一会   [Wait for a minutes]...  
 
