@@ -92,7 +92,7 @@ cd r8152-2.14.0
 
 make
 depmod -a
-update-initramfs
+update-initramfs -u
 
 if [ $? == 0 ]; then
 	echo ''
